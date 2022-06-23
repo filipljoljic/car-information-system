@@ -3,12 +3,6 @@ class VehiclesDao{
   public $conn;
   public function __construct(){
 
-    // https://freedb.tech/dashboard/
-    
-  // $servername = "sql.freedb.tech";
-  // $username = "freedb_carsharing";
-  // $password = "eDdnDb7kTR&28Du";
-  // $name="freedb_carsharing";
 
   $servername = "localhost";
   $username = "root";
