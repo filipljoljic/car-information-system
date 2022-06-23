@@ -1,0 +1,13 @@
+{
+    "name": "ibu/ecarsharing",
+    "description": "eCarsharing application",
+    "license": "apache2",
+    "require": {
+        "mikecao/flight": "^2.0"
+    },
+
+    "post-install-cmd": [
+        "php artisan clear-compiled",
+        "chmod -R 777 public/"
+    ]
+}

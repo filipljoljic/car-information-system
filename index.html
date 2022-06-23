@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>ecarsharing</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .error{
+        color: red;
+      }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div>
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Car Brand</th>
+                    <th scope="col">Car Model</th>
+                    <th scope="col">License Plate</th>
+                    <th scope="col">Price per Hour</th>
+                  </tr>
+                </thead>
+                <tbody id="vehicle-list">
+                  
+                </tbody>
+              </table> 
+            <!-- Adding button-->
+            <div class="row">
+              <div>
+                <button class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#addCarsModal">Add Vehicle</button>
+              </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/vehicle-service.js"></script>
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input id="id" type="hidden" />
+          <input id="carBrand" type="text" />
+          <input id="carModel" type="text" />
+          <input id="licensePlate" type="text" />
+          <input id="pricePerHour" type="text" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary vehicle-save" onClick="VehicleService.update()">Save changes</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<!--Modal for adding cars-->
+<div class="modal fade" id="addCarsModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="addVehicle">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Vehicles</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">      
+            <div class="form-group">
+              <label>Car brand</label>
+              <input name="car_brand" type="text" class="form-control required" placeholder="Enter car brand">
+            </div>
+            <div class="form-group">
+              <label>Car model</label>
+              <input name="car_model" type="text" class="form-control required"  placeholder="Enter car model">
+            </div>  
+            <div class="form-group">
+              <label>license plate</label>
+              <input name="license_plate" type="text" class="form-control required"  placeholder="Enter licence plate">
+            </div> 
+            <div class="form-group">
+              <label>Price per hour</label>
+              <input name="price_per_hour" type="number" class="form-control required"  placeholder="Enter price per hour">
+            </div>      
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form> 
+    </div>
+  </div>
+</div>
+
+
+<script>
+  VehicleService.init();
+</script>
+
+</html>
