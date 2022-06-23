@@ -3,11 +3,11 @@ class VehiclesDao{
   public $conn;
   public function __construct(){
 
-
-  $servername = "localhost";
-  $username = "root";
-  $password = "864950sa";
-  $name="freedb_carsharing";
+  // YOUR DB INFO
+  $servername = "";
+  $username = "";
+  $password = "";
+  $name="";
 
   try {
     $this->conn = new PDO("mysql:host=$servername;dbname=$name", $username, $password);
